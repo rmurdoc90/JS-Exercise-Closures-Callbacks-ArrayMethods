@@ -301,14 +301,13 @@ console.log(counterMaker());
 function counterMakerWithLimit(maxCount) {
   let count = 0
   return function(){
-    // if (count <= maxCount){
-    //   return count++;
-    // } else return count = 0
    
-   if(count > maxCount){
-     return count=0
-   } 
-   return count++;
+   
+   if(count >= maxCount){
+    let x = count++;
+    count=0;
+    return x
+   } else {return count++;}
   }
  
   
